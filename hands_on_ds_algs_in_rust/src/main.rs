@@ -14,7 +14,7 @@ enum Color {
 }
 
 impl Person {
-  pub fn represent(self) -> String {
+  pub fn represent(&self) -> String {
     return format!("name: {}, age: {}, children: {}, color: {:?}", self.name, self.age, self.children, self.favorite_color);
   }
 }
@@ -27,6 +27,7 @@ fn main() {
   //     Color::Blue => println!("Blued"),
   //     Color::Green => println!("Green"),
   // }
+  println!("Hello {}", &person.represent());
   println!("Hello {:?}", person);
-  println!("Hello {}", person.represent());
+  
 }
